@@ -171,6 +171,8 @@ def min_value(board):
 
     for action in actions(board):
         value = min(value, max_value(result(board, action)))
+        if value == -1:
+            return value
     
     return value
 
@@ -182,5 +184,7 @@ def max_value(board):
 
     for action in actions(board):
         value = max(value, min_value(result(board, action)))
+        if value == 1:
+            return value
     
     return value
