@@ -60,7 +60,7 @@ def result(board, action):
     copied_board = copy.deepcopy(board)
     i,j = action
 
-    if copied_board[i][j] is not EMPTY:
+    if copied_board[i][j] is not EMPTY or i not in range(3) or j not in range(3):
         raise Exception("Invalid action")
     
     copied_board[i][j] = player(board) 
